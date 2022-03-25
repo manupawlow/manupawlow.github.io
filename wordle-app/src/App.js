@@ -1,25 +1,29 @@
 import logo from './logo.svg';
 import './App.css';
+import HelloWorld from './components/HelloWorld.js'
+import ConnectButton from './components/ConnectButton.js'
+import WordManager from './components/WordManager.js';
+import Owner from './components/Owner';
+import OwnerOf from './components/OwnerOf';
+
+import { words } from './Words.js';
 
 function App() {
-  return (
+
+  const todayWord = words[0];
+
+  return <>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <Owner></Owner>
+      
+      <br></br>
+
+      <OwnerOf></OwnerOf>
+      {/* <WordManager word={todayWord}></WordManager> */}
+    
     </div>
-  );
+  </>
 }
 
 export default App;
