@@ -2,13 +2,25 @@
 <html>
     <head lang="en">
         <meta charset="utf-8">
-        <title>Prueba</title>
+        <title>Parse</title>
+
+        <link rel="stylesheet" type="text/css" href="./style.css">
     </head>
     <body>
 
         <script src="./main.js"></script>
         <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
 
-        <button onclick="connect()">click me</button>
+        <div class="abi-forms">
+            
+            <div class="abi-form">
+                <p>SOY UN TEXTO</p>
+                <input type="text" class="parsed-input" placeholder="contract address" id="contract-address"/>
+                <textarea class="abi parsed-input" placeholder="insert abi.." id="contract-abi"></textarea>
+                <button class="parsed-btn" onclick="sendToParse()" id="parse-btn">Parse</button>
+            </div>
+
+        </div>
+
     </body>
 </html>

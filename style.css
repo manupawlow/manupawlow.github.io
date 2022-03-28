@@ -1,0 +1,118 @@
+:root {
+    --clr-dark: #222336;
+    --clr-dark-hover: #1d1e31;
+    --clr-light: #35384c;
+    --clr-light-hover: #2e3145;
+    
+    /*buttons*/
+    --primary-clr: #663dbd;
+    --primary-clr-hover: #441A9A;
+
+    --clor-black: #2b2b2b;
+    --clr-white: #F5F5F5;
+    --clr-white-hover: #dddddd;
+
+    --fc-primary: #757575;
+    --fc-secondary: #959BAD;
+    --ff-primary: 'Courier New';
+    --ff-secondary: 'Courier New';
+    --fs-large: 1.8rem;
+    --fs-medium: 1rem;
+    --fs-small: .65rem;
+
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    text-align: center;
+
+    font-family: var(--ff-primary);
+    font-size: var(--fs-medium);
+    color: var(--fc-primary);
+}
+
+::-webkit-scrollbar {
+    width: 5px; /* width */
+}
+
+::-webkit-scrollbar-track {
+    background: var(--clr-light); /* Track */
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--clr-dark); /* Handle */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--dark-clr); /* Handle on hover */
+}
+
+/* @media (min-width: 800px) {
+    :root {
+        --fs-large: 1.65rem;
+        --fs-small: 1.25rem;
+    }
+} */
+
+body {
+    background: var(--clr-light);
+}
+
+.abi-forms {  
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+}
+
+.abi-form {
+    justify-content: space-between;
+    background: var(--clr-dark);
+    max-width: 500px;
+    padding: 20px;
+    margin: 10px 0px;
+}
+
+.parsed-input {
+    background: var(--clr-light);
+
+    margin: 5px 0px;
+    padding: 1px 10px;
+    
+    width: 100%;
+
+    transition: background-color 1s ease;
+}
+
+    .parsed-input:focus {
+        background: var(--clr-light-hover);
+        border-bottom: 1px solid var(--primary-clr-hover);
+    }
+
+.abi {
+    resize: vertical;
+    min-height: 250px;
+    text-align: left;
+    font-size: var(--fs-small);
+}
+
+.parsed-btn {
+    background: var(--primary-clr);
+    color: var(--clr-white);
+
+    width: 100%;
+    max-width: 300px;
+
+    margin: 5px 0px;
+
+    flex-basis: auto;
+    flex-grow: 1;
+
+    transition: background-color .5s ease, color .5s linear;
+}
+
+    .parsed-btn:hover {
+        background: var(--primary-clr-hover);
+        color: var(--clr-white-hover);
+    }
