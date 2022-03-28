@@ -16,15 +16,17 @@
     --fc-secondary: #959BAD;
     --ff-primary: 'Courier New';
     --ff-secondary: 'Courier New';
-    --fs-large: 1.8rem;
-    --fs-medium: 1rem;
-    --fs-small: .65rem;
+    --fs-large: 2.2rem;
+    --fs-medium: 1.8rem;
+    --fs-small: 1.25rem;
 
+    --border-radious: 2px;
 }
 
 *, *::before, *::after {
     box-sizing: border-box;
     border: none;
+    border-radius: var(--border-radious);
     outline: none;
     text-align: center;
 
@@ -96,6 +98,11 @@ body {
     text-align: left;
     font-size: var(--fs-small);
 }
+
+    .abi::-webkit-input-placeholder {
+        text-align: center;
+        font-size: var(--fs-medium);
+    }
 
 .parsed-btn {
     background: var(--primary-clr);
