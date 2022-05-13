@@ -30,12 +30,25 @@
             const myJson = await response.json(); //extract JSON from the http response
             // do something with myJson
             console.log(myJson);
-        }        
+        }     
+        
+        const userAction3 = async () => {
+            const response = await fetch('https://7nmv6t4fk1od.usemoralis.com:2053/server/functions/EchoCorsValidation', {
+                method: 'GET',
+                headers: {
+                'Content-Type': 'application/json'
+                }
+            });
+            const myJson = await response.json(); //extract JSON from the http response
+            // do something with myJson
+            console.log(myJson);
+        }            
     </script>
 </body>
 
 
 <button onclick="userAction()">Click me 2!</button>
 <button onclick="userAction2()">Click me 2 2!</button>
+<button onclick="userAction2()">Click me 2 3!</button>
 
 </html>
