@@ -1,0 +1,4 @@
+1) Parse events => get any event + listen events
+2) Parse constructor => allows to deploy the contract
+3) Parse structs as arrays
+4) Parse public variables views

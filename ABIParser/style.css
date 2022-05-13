@@ -8,7 +8,7 @@
     --primary-clr: #663dbd;
     --primary-clr-hover: #441A9A;
 
-    --clor-black: #2b2b2b;
+    --clr-black: #2b2b2b;
     --clr-white: #F5F5F5;
     --clr-white-darker: #cccccc;
 
@@ -24,6 +24,15 @@
     --border-radious: 2px;
 
     --abi-form-width: 90%;
+
+    --mutability-view-clr: #355f7d;
+    --mutability-view-clr-hover: #1e4d5e;
+    --mutability-pure-clr: #355f7d;
+    --mutability-pure-clr-hover: #1e4d5e;
+    --mutability-nonpayable-clr: #b86133;
+    --mutability-nonpayable-clr-hover: #a75022;
+    --mutability-payable-clr: #b84040;
+    --mutability-payable-clr-hover: #862122;
 }
 
 @media screen and (min-width: 625px) {
@@ -43,6 +52,10 @@
     font-family: var(--ff-primary);
     font-size: var(--fs-medium);
     color: var(--fc-primary);
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {
@@ -147,24 +160,24 @@ textarea {
     }
 
 .view, .pure {
-    background-color: #355f7d;
+    background-color: var(--mutability-view-clr);
 }
-    .view:hover, .pure:hover {
-        background-color: #1e4d5e;
+    .view:hover, .pure:hover, .view:disabled, .pure:disabled {
+        background-color: var(--mutability-view-clr-hover);
     }
 
 .nonpayable {
-    background-color: #b86133;
+    background-color: var(--mutability-nonpayable-clr);
 }
-    .nonpayable:hover {
-        background-color: #a75022;
+    .nonpayable:hover, .nonpayable:disabled {
+        background-color: var(--mutability-nonpayable-clr-hover);
     }
 
 .payable {
-    background-color: #b84040;
+    background-color: var(--mutability-payable-clr);
 }
-    .payable:hover {
-        background-color: #862122;
+    .payable:hover, .payable:disabled {
+        background-color: var(--mutability-payable-clr-hover);
     }
 
 .mutability, .input-description {
@@ -173,4 +186,78 @@ textarea {
 
 .input-description {
     font-size: var(--fs-small);
+}
+
+.function-redirects {
+    display: none;
+    background-color: var(--clr-light);
+}
+
+.response {
+    background-color: var(--clr-light);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 20px 0;
+}
+
+.response * {
+    background-color: var(--clr-light);
+    margin: 0%;
+    border-radius: 0%
+}
+
+.response textarea {
+    flex-grow: 1;
+    white-space: revert;
+    text-align: left;
+    /* overflow: initial; */
+}
+
+.response textarea::-webkit-scrollbar {
+    display: none;
+} 
+
+/* .response button {
+    height: 50px;
+} */
+
+.response button:hover {
+    cursor: pointer;
+}
+
+.redirects {
+    transition: visibility 1s linear, opacity 0.33s linear;
+}
+
+a:link { text-decoration: none; }
+a:visited { text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:active { text-decoration: none; }
+a {
+    /* color: var(--clr-white-darker); */
+    color: var(--clr-white-darker);
+    display: block;
+}
+
+a:hover {
+    color: var(--primary-clr);
+}
+
+.a-view:hover, .a-pure:hover{
+    color: var(--mutability-view-clr);
+}
+.a-nonpayable:hover{
+    color: var(--mutability-nonpayable-clr);
+}
+.a-payable:hover{
+    color: var(--mutability-payable-clr);
+}
+
+.show {display: block;}
+
+.listening {
+    display: inline;
+    width: 15px;
+    margin: 5px;
 }

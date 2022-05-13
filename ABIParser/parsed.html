@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Parsed</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="./public/eth-logo.png" />
+    <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+    <script src="./utils.js"></script>
+    <script src="./parsed.js"></script>
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+
+    <button class="parser-btn" id="home-btn" onclick="goHome()">
+        <span class="iconify-inline" data-icon="carbon:document-add" data-width="32" data-height="15"></span> 
+        parse new ABI
+    </button>   
+    <button class="parser-btn" id="connect-btn" onclick="connect()">
+        <span class="iconify-inline" data-icon="logos:metamask-icon" data-width="32" data-height="15"></span> 
+        connect
+    </button>
+
+    <div class="parser-forms" id="abi-forms">
+        <div class="abi-form" id="abi-information">
+            <b><p id="network-description">[No network]</p></b>
+            <p style="margin-top: 40px;">contract address</p>
+            <input type="text" class="parser-input" id="contract-address" placeholder="contract address" required>
+            <button class="parser-btn" onclick="showRefs()">
+                Parsed Functions <span id='dropdown' class="iconify-inline" data-width="20" data-height="15" data-icon="ci:play-arrow" data-rotate="90deg"></span>
+            </button>
+            <div id="function-redirects" class="redirects" hidden>
+            </div>
+        </div>
+    </div>
+</body>

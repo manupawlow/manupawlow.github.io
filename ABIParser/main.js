@@ -1,34 +1,16 @@
 
+
 //SETTINGS
 const ABI_PARSER_URL =
   'https://blockchain-af-api.azurewebsites.net/api/GetPepe2?'; 
-  //'http://localhost:7071/api/GetPepe';
+  // 'http://localhost:7071/api/GetPepe2';
 
 //GLOBAL VARIABLES
 let CONTRACT_ADDRESS = '';
 let CONTRACT_ABI = '';
 
 //PAGE FUNCTIONS
-function disableAllForm(disable) {
-  var inputs = document.getElementsByTagName("input");
-  for (var i = 0; i < inputs.length; i++) {
-    inputs[i].disabled = disable;
-  }
-  var selects = document.getElementsByTagName("select");
-  for (var i = 0; i < selects.length; i++) {
-    selects[i].disabled = disable;
-  }
-  var textareas = document.getElementsByTagName("textarea");
-  for (var i = 0; i < textareas.length; i++) {
-    textareas[i].disabled = disable;
-  }
-  var buttons = document.getElementsByTagName("button");
-  for (var i = 0; i < buttons.length; i++) {
-    buttons[i].disabled = disable;
-  }
 
-  document.getElementById("connect-btn").disabled = false;
-}
 
 const connectWallet = () => {
   disableAllForm(true);
