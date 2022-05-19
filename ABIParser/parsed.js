@@ -1,8 +1,8 @@
 const RELATIVE_PARSED_ERROR_PAGE = 'parse.html';
 
 const ABI_PARSER_URL =
-    // 'https://blockchain-af-api.azurewebsites.net/api/GetPepe2?'; 
-    'http://localhost:7071/api/GetPepe2';
+    'https://blockchain-af-api.azurewebsites.net/api/ParseAbi'; 
+    //'http://localhost:7071/api/ParseAbi';
 
 
 let CONTRACT_ADDRESS;

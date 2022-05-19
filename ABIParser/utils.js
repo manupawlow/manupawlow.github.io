@@ -1,4 +1,4 @@
-const RELATIVE_HOME_PAGE = 'parse.html';
+const RELATIVE_HOME_PAGE = '/';//'parse.html';
 
 const goHome = () => window.location.href = RELATIVE_HOME_PAGE;
 
