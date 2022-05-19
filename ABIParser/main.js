@@ -2,7 +2,7 @@
 
 //SETTINGS
 const ABI_PARSER_URL =
-  'https://blockchain-af-api.azurewebsites.net/api/GetPepe2?'; 
+  'https://blockchain-af-api.azurewebsites.net/api/ParseAbi'; 
   // 'http://localhost:7071/api/GetPepe2';
 
 //GLOBAL VARIABLES
