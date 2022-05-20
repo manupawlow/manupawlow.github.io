@@ -2,3 +2,6 @@
 2) Parse constructor => allows to deploy the contract
 3) Parse structs as arrays
 4) Parse public variables views
+5) Ver que pasa con el fallback
+6) Ver mappins
+7) Cuando tire error que muestre el error en rojo en el abi

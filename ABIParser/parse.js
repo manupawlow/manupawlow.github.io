@@ -1,4 +1,4 @@
-const REALTIVE_PARSED_PAGE = 'parsed.html';
+const REALTIVE_PARSED_PAGE = './parsed.html';
 
 const sendToParse = async () => {
 

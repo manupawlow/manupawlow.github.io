@@ -1,8 +1,8 @@
-const RELATIVE_PARSED_ERROR_PAGE = 'parse.html';
+const RELATIVE_PARSED_ERROR_PAGE = './';
 
 const ABI_PARSER_URL =
-    'https://blockchain-af-api.azurewebsites.net/api/ParseAbi'; 
-    //'http://localhost:7071/api/ParseAbi';
+    // 'https://blockchain-af-api.azurewebsites.net/api/ParseAbi'; 
+    'http://localhost:7071/api/ParseAbi';
 
 
 let CONTRACT_ADDRESS;
@@ -108,7 +108,6 @@ const copyResponse = (responseId) => {
 
 const getIconByChainId = (chainId) => {
   switch(chainId){
-
     case 1: //ethereum mainnet
       return '<span class="iconify-inline" data-icon="cib:ethereum"></span>';
 
