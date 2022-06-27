@@ -1,4 +1,4 @@
-const RELATIVE_HOME_PAGE = './';//'parse.html';
+const RELATIVE_HOME_PAGE = '../parse';//'parse.html';
 
 const goHome = () => window.location.href = RELATIVE_HOME_PAGE;
 
@@ -32,4 +32,13 @@ function disableAllForm(disable, unDisableIds = []) {
 
   const listen_event = (eventId, e) => document.getElementById(eventId) = e.checked;
 
+  const abi_compression = (s) => {
+    return LZString.compressToEncodedURIComponent(
+      s.replace(/\r/g, "").replace(/\n/g, "").replace("\t", "").replace(" ", "")
+    )
+  }
+
+  const abi_decompression = (s) => {
+    return LZString.decompressFromEncodedURIComponent(s)
+  }
   

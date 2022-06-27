@@ -7,22 +7,28 @@
     
     <title>Parsed</title>
 
-    <link rel="shortcut icon" type="image/x-icon" href="./public/eth-logo.png" />
-    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../public/eth-logo.png" />
+    <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
 <body>
-    <script src="./utils.js"></script>
+    <script src="../utils.js"></script>
     <script src="./parsed.js"></script>
+    <script src="../lz-string.js"></script>
     <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
 
-    <button class="parser-btn" id="home-btn" onclick="goHome()">
-        <span class="iconify-inline" data-icon="carbon:document-add" data-width="32" data-height="15"></span> 
-        parse new ABI
+    <button class="parser-btn" id="home-btn" style="max-width:170px;" onclick="goHome()">
+        <span id='dropdown' class="iconify-inline" data-width="20" data-height="15" data-icon="ci:play-arrow" data-rotate="180deg"></span>
+        <!-- <span class="iconify-inline" data-icon="carbon:document-add" data-width="30" data-height="15"></span>  -->
+        new ABI
     </button>   
     <button class="parser-btn" id="connect-btn" onclick="connect()">
         <span class="iconify-inline" data-icon="logos:metamask-icon" data-width="32" data-height="15"></span> 
         connect
+    </button>
+    <button class="parser-btn" id="copylink-btn" style="max-width:170px;" onclick="copyLink()">
+        <span class="iconify" data-icon="ant-design:copy-outlined"></span>
+        page link
     </button>
 
     <div class="parser-forms" id="abi-forms">
@@ -37,4 +43,8 @@
             </div>
         </div>
     </div>
+
+    <button onclick="document.body.scrollTop=0;document.documentElement.scrollTop=0;" id="top-btn" title="Go to top">
+        <span id='dropdown' class="iconify-inline" data-width="20" data-height="15" data-icon="ci:play-arrow" data-rotate="270deg"></span>
+    </button>
 </body>
