@@ -18,7 +18,7 @@
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
 
     <button class="parser-btn" id="home-btn" style="max-width:170px;" onclick="goHome()">
-        <span id='dropdown' class="iconify-inline" data-width="20" data-height="15" data-icon="ci:play-arrow" data-rotate="180deg"></span>
+        <span class="iconify-inline" data-width="20" data-height="15" data-icon="ci:play-arrow" data-rotate="180deg"></span>
         <!-- <span class="iconify-inline" data-icon="carbon:document-add" data-width="30" data-height="15"></span>  -->
         new ABI
     </button>   
@@ -28,7 +28,7 @@
     </button>
     <button class="parser-btn" id="copylink-btn" style="max-width:170px;" onclick="copyLink()">
         <span class="iconify" data-icon="ant-design:copy-outlined"></span>
-        page link
+        save
     </button>
 
     <div class="parser-forms" id="abi-forms">
@@ -36,7 +36,7 @@
             <b><p id="network-description">[No network]</p></b>
             <p style="margin-top: 40px;">contract address</p>
             <input type="text" class="parser-input" id="contract-address" placeholder="contract address" required>
-            <button class="parser-btn" onclick="showRefs()">
+            <button class="parser-btn" onclick="showRefs()" id="funcdropdown-btn">
                 Parsed Functions <span id='dropdown' class="iconify-inline" data-width="20" data-height="15" data-icon="ci:play-arrow" data-rotate="90deg"></span>
             </button>
             <div id="function-redirects" class="redirects" hidden>

@@ -10,6 +10,8 @@ let CONTRACT_ABI;
 
 let conected = false
 
+let buttons = []
+
 window.addEventListener('load', async () => {
 
   const queryString = window.location.search;
@@ -23,19 +25,24 @@ window.addEventListener('load', async () => {
 
   if (isAddress(CONTRACT_ADDRESS)) document.getElementById('contract-address').value = CONTRACT_ADDRESS;
 
-  document.getElementById('contract-address').addEventListener('input', (e) => {
-    CONTRACT_ADDRESS = e.target.value;
-  })
+  document.getElementById('contract-address').addEventListener('input', (e) => { CONTRACT_ADDRESS = e.target.value })
 
   window.onscroll = () => { document.getElementById('top-btn').style.display = (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) ? "block" : "none" };
+
+  buttons = [
+    document.getElementById('connect-btn'), 
+    document.getElementById('home-btn'), 
+    document.getElementById('copylink-btn'), 
+    document.getElementById('top-btn'), 
+    document.getElementById('funcdropdown-btn'), 
+    document.getElementById('contract-address')
+  ]
 
 });
 
 window.addEventListener('click', function(e){
-  if (!conected && !(document.getElementById('connect-btn').contains(e.target) || document.getElementById('home-btn').contains(e.target) || document.getElementById('copylink-btn').contains(e.target) || document.getElementById('top-btn').contains(e.target))){
-    alert("connect your wallet to user the functions!")
-  } else{
-    // Clicked outside the box
+  if (!conected && !buttons.some(b => b.contains(e.target)) && e.target.tagName.toLowerCase() != 'a'){
+    alert("Connect your wallet to user the functions!")
   }
 });
 
@@ -48,7 +55,7 @@ const updateProviderData = async (provider) => {
 
 const connect = async () => {
   
-  disableAllForm(true, ['connect-btn', 'home-btn', 'copylink-btn', 'top-btn']);
+  disableAllForm(true, buttons);
 
   await window.ethereum.enable()
 
@@ -101,7 +108,7 @@ const parse = async (abi) => {
       document.body.appendChild(divElm);
       document.body.appendChild(scriptElm);
 
-      disableAllForm(true, ['connect-btn', 'home-btn', 'copylink-btn', 'top-btn']);
+      disableAllForm(true, buttons);
     })
     .catch(error => {
         console.error(error);
@@ -165,5 +172,5 @@ const getChainDataById = (chainId) => {
 const copyLink = () => {
   const page = location.protocol + '//' + location.host + location.pathname
   navigator.clipboard.writeText(page + '?abi=' + abi_compression(CONTRACT_ABI) + '&contract-address=' + CONTRACT_ADDRESS);
-  alert('Copied response!');
+  alert('Copied page link!');
 }

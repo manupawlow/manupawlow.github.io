@@ -2,7 +2,7 @@ const RELATIVE_HOME_PAGE = '../parse';//'parse.html';
 
 const goHome = () => window.location.href = RELATIVE_HOME_PAGE;
 
-function disableAllForm(disable, unDisableIds = []) {
+function disableAllForm(disable, unDisable = []) {
     var inputs = document.getElementsByTagName("input");
     for (var i = 0; i < inputs.length; i++) {
       inputs[i].disabled = disable;
@@ -23,7 +23,7 @@ function disableAllForm(disable, unDisableIds = []) {
     let redirects = document.getElementById('function-redirects');
     if (redirects) redirects.disabled = disable;
 
-    unDisableIds.forEach(element => document.getElementById(element).disabled = !disable);
+    unDisable.forEach(element => element.disabled = !disable);
   }
 
   const sleep = ms => new Promise(r => setTimeout(r, ms));
