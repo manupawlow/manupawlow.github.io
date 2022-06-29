@@ -8,7 +8,15 @@ const sendToParse = async () => {
 
     const CONTRACT_ABI = document.getElementById('contract-abi').value;
 
-    // localStorage.setItem('contract-abi', CONTRACT_ABI);
-
-    window.location = REALTIVE_PARSED_PAGE + '/index.html?abi=' + abi_compression(CONTRACT_ABI);
+    window.location = REALTIVE_PARSED_PAGE + '/?abi=' + abi_compression(CONTRACT_ABI);
 }
+
+// window.addEventListener('load', async () => {
+//     var checkList = document.getElementById('list1');
+//     checkList.getElementsByClassName('anchor')[0].onclick = function(evt) {
+//       if (checkList.classList.contains('visible'))
+//         checkList.classList.remove('visible');
+//       else
+//         checkList.classList.add('visible');
+//     }
+// })

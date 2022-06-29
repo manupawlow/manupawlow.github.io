@@ -16,6 +16,7 @@ window.addEventListener('load', async () => {
 
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
+  console.log(urlParams.get('abi'))
   CONTRACT_ABI = abi_decompression(urlParams.get('abi'))
   // CONTRACT_ABI = localStorage.getItem('contract-abi');
 
@@ -38,11 +39,15 @@ window.addEventListener('load', async () => {
     document.getElementById('contract-address')
   ]
 
+  window.ethereum.on('networkChanged', (networkId) => {
+    connect()
+    alert('networkChanged ', networkId);
+  });
 });
 
 window.addEventListener('click', function(e){
   if (!conected && !buttons.some(b => b.contains(e.target)) && e.target.tagName.toLowerCase() != 'a'){
-    alert("Connect your wallet to user the functions!")
+    alert("Connect your wallet to use the functions!")
   }
 });
 

@@ -17,19 +17,21 @@
     <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
 
-    <button class="parser-btn" id="home-btn" style="max-width:170px;" onclick="goHome()">
-        <span class="iconify-inline" data-width="20" data-height="15" data-icon="ci:play-arrow" data-rotate="180deg"></span>
-        <!-- <span class="iconify-inline" data-icon="carbon:document-add" data-width="30" data-height="15"></span>  -->
-        new ABI
-    </button>   
-    <button class="parser-btn" id="connect-btn" onclick="connect()">
-        <span class="iconify-inline" data-icon="logos:metamask-icon" data-width="32" data-height="15"></span> 
-        connect
-    </button>
-    <button class="parser-btn" id="copylink-btn" style="max-width:170px;" onclick="copyLink()">
-        <span class="iconify" data-icon="ant-design:copy-outlined"></span>
-        save
-    </button>
+    <div id="page-btns">
+        <button class="parser-btn" id="home-btn" style="max-width:170px; height: 25px;" onclick="goHome()">
+            <span class="iconify-inline" data-width="20" data-height="15" data-icon="ci:play-arrow" data-rotate="180deg"></span>
+            <!-- <span class="iconify-inline" data-icon="carbon:document-add" data-width="30" data-height="15"></span>  -->
+            new ABI
+        </button>
+        <button class="parser-btn" id="copylink-btn" style="max-width:170px; height: 25px;" onclick="copyLink()">
+            <span class="iconify" data-icon="ant-design:copy-outlined" ></span>
+            save
+        </button>
+        <button class="parser-btn" id="connect-btn" style=" height: 25px;" onclick="connect()">
+            <span class="iconify-inline" data-icon="logos:metamask-icon" data-width="32" data-height="15"></span> 
+            connect
+        </button>
+    </div>
 
     <div class="parser-forms" id="abi-forms">
         <div class="abi-form" id="abi-information">
