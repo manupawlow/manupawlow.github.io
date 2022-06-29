@@ -53,9 +53,10 @@ window.addEventListener('click', function(e){
 
 const updateProviderData = async (provider) => {
     const network = await provider.getNetwork();
-    const data = getChainDataById(network.chainId)
+    console.log(network.chainId)
+    let networkData = getChainDataById(network.chainId)
     document.getElementById('network-description').innerHTML  = 
-    data.icon + ' Network ' + network.chainId + ' ' + data.name;
+    networkData.icon + ' Network ' + network.chainId + ' ' + networkData.name;
 }
 
 const connect = async () => {
@@ -65,8 +66,6 @@ const connect = async () => {
   await window.ethereum.enable()
 
   const provider = new ethers.providers.Web3Provider(window.ethereum);
-
-  console.log(provider);
 
   const signer = provider.getSigner();
 
@@ -147,10 +146,10 @@ const getChainDataById = (chainId) => {
     case 56:
       return {
         name: 'bnb mainnet',
-        icon: '<object data="./public/avalanche-avax-logo.svg" width="15" height="15"> </object>'
+        icon: '<span class="iconify-inline" data-icon="simple-icons:binance"></span>'
       };
     
-    case 43114:
+    case 43113:
       return {
         name: 'avalanche mainnet',
         icon: '<object data="./public/avalanche-avax-logo.svg" width="15" height="15"> </object>'
