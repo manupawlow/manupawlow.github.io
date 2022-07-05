@@ -59,7 +59,7 @@ html {
 }
 
 ::-webkit-scrollbar {
-    width: 5px; /* width */
+    width: 10px; /* width */
 }
 
 ::-webkit-scrollbar-track {
@@ -211,16 +211,22 @@ textarea {
     flex-grow: 1;
     white-space: revert;
     text-align: left;
-    /* overflow: initial; */
+    overflow-y: scroll;
+    resize: vertical;
 }
 
 .response textarea::-webkit-scrollbar {
-    display: none;
-} 
+    width: 5px; /* width */
+}
 
-/* .response button {
-    height: 50px;
-} */
+::-webkit-scrollbar-corner {
+    display: none;
+  }
+
+.response button {
+    height: 35px;
+    margin: 0% 0% 0% 90%;
+} 
 
 .response button:hover {
     cursor: pointer;
@@ -334,4 +340,9 @@ a:hover {
   
   .dropdown-check-list.visible .items {
     display: block;
+  }
+
+  #page-btns {
+    /* width: var(--abi-form-width);
+    margin: 50px 0; */
   }

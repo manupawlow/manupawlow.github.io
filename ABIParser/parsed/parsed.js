@@ -43,6 +43,14 @@ window.addEventListener('load', async () => {
     connect()
     alert('networkChanged ', networkId);
   });
+
+  window.ethereum.on('disconnect', () => {
+    clearProviderData()
+  });
+
+  const accounts = await new ethers.providers.Web3Provider(window.ethereum).listAccounts();
+  if (accounts.length > 0)
+    connect()
 });
 
 window.addEventListener('click', function(e){
@@ -53,10 +61,13 @@ window.addEventListener('click', function(e){
 
 const updateProviderData = async (provider) => {
     const network = await provider.getNetwork();
-    console.log(network.chainId)
     let networkData = getChainDataById(network.chainId)
-    document.getElementById('network-description').innerHTML  = 
+    document.getElementById('network-description').innerHTML = 
     networkData.icon + ' Network ' + network.chainId + ' ' + networkData.name;
+}
+
+const clearProviderData = () => {
+  document.getElementById('network-description').innerHTML = '[No network]';
 }
 
 const connect = async () => {
@@ -128,9 +139,19 @@ const showRefs = () => {
   open = !open;
 }
 
-const copyResponse = (responseId) => {
-  navigator.clipboard.writeText(document.getElementById(responseId).value);
-  alert('Copied response!');
+const copyResponse = async (responseId) => {
+  let txtarea = document.getElementById(responseId + '-textarea')
+  let btn = document.getElementById(responseId + '-button')
+
+  navigator.clipboard.writeText(txtarea.value)
+
+  let prevHtml = btn.innerHTML
+  console.log(prevHtml)
+  btn.innerHTML = '<span class="iconify" data-icon="eva:checkmark-fill"></span>'
+  await sleep(1500)
+  btn.innerHTML = prevHtml
+  // navigator.clipboard.writeText(document.getElementById(responseId).value);
+  // alert('Copied response!');
 }
 
 const getChainDataById = (chainId) => {
@@ -175,6 +196,6 @@ const getChainDataById = (chainId) => {
 
 const copyLink = () => {
   const page = location.protocol + '//' + location.host + location.pathname
-  navigator.clipboard.writeText(page + '?abi=' + abi_compression(CONTRACT_ABI) + '&contract-address=' + CONTRACT_ADDRESS);
+  navigator.clipboard.writeText(page + '?contract-address=' + CONTRACT_ADDRESS + '&abi=' + abi_compression(CONTRACT_ABI));
   alert('Copied page link!');
 }
