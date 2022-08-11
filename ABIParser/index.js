@@ -10,7 +10,7 @@ const generateContractDiv = (contract) => {
     contractDiv.classList.add('contract')
     contractDiv.classList.add('contract-item')
 
-    let contractName = document.createElement("H3")
+    let contractName = document.createElement("H2")
     contractName.innerHTML = contract.Name
 
     let contractVersion = document.createElement("span")

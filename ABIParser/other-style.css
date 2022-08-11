@@ -25,7 +25,7 @@ body {
     padding: 10px 20px 10px 20px;
 }
 
-.contract h3 {
+.contract h2 {
     display: inline;
 }
 
@@ -58,6 +58,11 @@ button:hover, input[type=submit]:hover {
 .contract-item:nth-child(even) {
     background: white;
 } */
+
+p, span {
+    color: lightgray;
+}
+
 form input, textarea {
     width: 100%;
     margin-bottom: 15px;
