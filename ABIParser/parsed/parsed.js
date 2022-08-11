@@ -12,17 +12,30 @@ let conected = false
 
 let buttons = []
 
+const getContractFromDatabase = async (hash) => {
+  let response = await fetch('http://localhost:7071/api/get-contract')
+  let contracts = await response.json()
+  console.log(hash)
+  console.log(contracts)
+  return contracts.filter(c => c.Hash === hash)[0]
+}
+
 window.addEventListener('load', async () => {
 
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
-  console.log(urlParams.get('abi'))
-  CONTRACT_ABI = abi_decompression(urlParams.get('abi'))
+  
+  console.log(urlParams.get('contract'))
+  let contract = await getContractFromDatabase(urlParams.get('contract'))
+  console.log(contract)
   // CONTRACT_ABI = localStorage.getItem('contract-abi');
+  // CONTRACT_ABI = abi_decompression(urlParams.get('abi'))
+  CONTRACT_ABI = contract.ABI
 
   await parse(CONTRACT_ABI);
 
-  CONTRACT_ADDRESS = urlParams.get('contract-address');
+  // CONTRACT_ADDRESS = urlParams.get('contract-address');
+  CONTRACT_ADDRESS = contract.ContractAddress
 
   if (isAddress(CONTRACT_ADDRESS)) document.getElementById('contract-address').value = CONTRACT_ADDRESS;
 

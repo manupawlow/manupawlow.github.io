@@ -4,11 +4,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecting...</title>
+    <title>Contracts</title>
+    <link rel="stylesheet" href="other-style.css">
+    
+    <script src="./index.js"></script>
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+
 </head>
 <body>
-    <script>
-        window.location.href = './parse'
-    </script>
+    <h1 style="margin: 50px 10px;">DAppsFactory Contracts</h1>
+
+    <button class="open-modal create">+ New Contract</button>
+
+    <div id="contracts-list" class="contracts-list"></div>
+
+    <div id="modal" class="modal">
+        <span class="modal-backdrop"></span>
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title">Contract</h3><button class="close-modal">&times</button>
+          </div>
+          <div class="modal-body">
+            <!-- <label>Project name: </label>
+            <input type="text" placeholder="Name..." />
+            <br>
+            <label>Description: </label>
+            <input type="text" placeholder="Name..." /> -->
+            <form id="contract-form" name="contract-form" method="post">
+                <label>Name: </label>
+                <input type="text" name="fname" style="width: 60%;">
+                <label>Version: </label>
+                <input type="text" name="fversion" value="1" style="width: 30px;"><br>
+                <label>Description: </label>
+                <input type="text" name="fdescription" style="width: 80%;"><br>
+                <label>ABI: </label><br>
+                <textarea name="fabi"></textarea><br>
+                <label>Code: </label><br>
+                <textarea name="fcode"></textarea><br>
+                <label>Contract address: </label><br>
+                <input type="text" name="fcontractAddress"><br>
+
+                <input type="submit" value="Submit">
+            </form>
+          </div>
+          <!-- <div class="modal-footer">
+            <button class="close-modal">Add</button>
+            <button class="close-modal">Cancel</button>
+          </div> -->
+        </div>
+      </div>
+    </div>
 </body>
 </html>

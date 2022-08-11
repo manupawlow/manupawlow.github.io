@@ -1,0 +1,141 @@
+*, *::before, *::after {
+    margin: 5px;
+    font-family: 'Courier New';
+    color: #F5F5F5;
+    border: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+body {
+    background-color: #35384c;
+}
+
+.contracts-list {
+    margin: 0px;
+}
+
+.contract {
+    background-color: #222336;
+    padding: 10px 20px 10px 20px;
+}
+
+.contract h3 {
+    display: inline;
+}
+
+button, input[type=submit] {
+    background: #663dbd;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+button:hover, input[type=submit]:hover {
+    background: #441A9A;
+}
+
+.create { background: rgb(39, 146, 25); }
+.create:hover { background: rgb(38, 109, 29); }
+
+.edit { background: rgb(55, 72, 187); }
+.edit:hover { background: rgb(29, 49, 179); }
+
+.delete { background: rgb(200, 30, 30) }
+.delete:hover { background: rgb(146, 1, 1); }
+
+.edit:hover {
+    background-color: 'red';
+}
+
+/* .contract-item:nth-child(odd) {
+    background: rgb(240, 240, 240);
+}
+.contract-item:nth-child(even) {
+    background: white;
+} */
+form input, textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    font-family: 'Courier New';
+    background-color: #222336;
+}
+
+form textarea {
+    height: 80px;
+}
+
+form input[type=submit] {
+    margin-top: 25px;
+}
+
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+.modal .modal-backdrop {
+    background: rgba(0, 0, 0, 0.7);
+    height: 100%;
+    width: 110%;
+    position: fixed;
+}
+.modal .modal-content {
+    background: #35384c;
+    border-radius: 5px;
+    /* max-width: 600px; */
+    width: 60%;
+    position: fixed;
+    top: -100%;
+    transition: all 0.6s ease;
+    z-index: 1000;
+    max-height: calc(100vh - 50px);
+    overflow-y: auto; 
+}
+.modal .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 0rem 1.5rem 0rem 1.5rem;
+}
+
+.modal .modal-header .close-modal {
+    font-size: 1rem;
+    padding: 0;
+    margin: 0;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    background-color: rgb(200, 30, 30);
+    border-radius: 5%;
+}
+.modal .modal-header .close-modal:hover {
+    background-color: rgb(146, 1, 1);
+    cursor: pointer;
+}
+.modal .modal-body {
+    padding: 1.5rem;
+}
+.modal .modal-footer {
+    border-top: 1px solid #ccc;
+    padding: 1rem;
+    text-align: right;
+}
+.modal.visible {
+    opacity: 1;
+    visibility: visible;
+}
+.modal.visible .modal-content {
+    top: 5%;
+}
