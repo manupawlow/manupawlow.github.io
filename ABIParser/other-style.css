@@ -3,7 +3,7 @@
     font-family: 'Courier New';
     color: #F5F5F5;
     border: none;
-    font-size: 1rem;
+    font-size: 1.07rem;
 }
 
 input::-webkit-outer-spin-button,
@@ -22,6 +22,7 @@ body {
 
 .contract {
     background-color: #222336;
+    margin-top: 10px;
     padding: 10px 20px 10px 20px;
 }
 
@@ -68,6 +69,7 @@ form input, textarea {
     margin-bottom: 15px;
     font-family: 'Courier New';
     background-color: #222336;
+    box-shadow: 0 1px 0 #663dbd;
 }
 
 form textarea {

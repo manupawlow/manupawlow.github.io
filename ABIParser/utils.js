@@ -1,4 +1,9 @@
 const RELATIVE_HOME_PAGE = '../parse';//'parse.html';
+// const API_BASE_URL =
+//     'https://blockchain-af-api.azurewebsites.net/api/ParseAbi'; 
+//     // 'http://localhost:7071/api/ParseAbi';
+
+const API_BASE_URL = 'https://blockchain-af-api.azurewebsites.net/api/'
 
 const goHome = () => window.location.href = RELATIVE_HOME_PAGE;
 

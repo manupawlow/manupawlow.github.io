@@ -1,5 +1,5 @@
 
-const API_BASE_URL = 'https://blockchain-af-api.azurewebsites.net' //'http://localhost:7071'
+// const API_BASE_URL = 'https://blockchain-af-api.azurewebsites.net' //'http://localhost:7071'
 const RELATIVE_PARSED_PAGE = './parsed/' // '../parsed/';
 
 let currentContract
@@ -50,18 +50,24 @@ const appendButtons = (contractDiv, contract) => {
     let copyAbiBtn = document.createElement('button')
     copyAbiBtn.innerHTML = 'Copy ABI'
     copyAbiBtn.addEventListener('click', () => {
+        alert('Copied ABI!')
         navigator.clipboard.writeText(contract.ABI)
     })
 
     let copyCodeBtn = document.createElement('button')
     copyCodeBtn.innerHTML = 'Copy Source Code'
     copyCodeBtn.addEventListener('click', () => {
+        alert('Copied Source Code!')
         navigator.clipboard.writeText(contract.SourceCode)
     })
 
     let parseAbiBtn = document.createElement('button')
     parseAbiBtn.innerHTML = 'Parse ABI'
     parseAbiBtn.addEventListener('click', () => {
+        if (!contract.ABI) { 
+            alert('ABI is empty!')
+            return;
+        }
         window.open(RELATIVE_PARSED_PAGE + '?contract=' + contract.Hash, '_blank').focus()
     })
 
@@ -86,7 +92,7 @@ const showContracts = async () => {
 
     while (contractList.lastElementChild) contractList.removeChild(contractList.lastElementChild);
     
-    let response = await fetch(API_BASE_URL + '/api/get-contract')
+    let response = await fetch(API_BASE_URL + 'get-contract')
     let contracts = await response.json()
 
     contracts.forEach(contract => appendContract(contractList, contract))
@@ -107,7 +113,7 @@ const resetForm = () => {
 }
 
 const postContract = async (contract) => {
-    await fetch(API_BASE_URL + '/api/post-contract', {
+    await fetch(API_BASE_URL + 'post-contract', {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
@@ -118,7 +124,7 @@ const postContract = async (contract) => {
 }
 
 const deleteContract = async (contract) => {
-    await fetch(API_BASE_URL + '/api/delete-contract', {
+    await fetch(API_BASE_URL + 'delete-contract', {
         method: 'DELETE',
         headers: {
             'Accept': 'application/json',

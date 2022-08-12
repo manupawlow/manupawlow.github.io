@@ -1,10 +1,5 @@
 const RELATIVE_PARSED_ERROR_PAGE = '../parse/';
 
-const ABI_PARSER_URL =
-    'https://blockchain-af-api.azurewebsites.net/api/ParseAbi'; 
-    // 'http://localhost:7071/api/ParseAbi';
-
-
 let CONTRACT_ADDRESS;
 let CONTRACT_ABI;
 
@@ -13,7 +8,7 @@ let conected = false
 let buttons = []
 
 const getContractFromDatabase = async (hash) => {
-  let response = await fetch('http://localhost:7071/api/get-contract')
+  let response = await fetch(API_BASE_URL + 'get-contract')
   let contracts = await response.json()
   console.log(hash)
   console.log(contracts)
@@ -101,7 +96,7 @@ const connect = async () => {
 }
 
 const parse = async (abi) => {
-    fetch(ABI_PARSER_URL, {
+    fetch(API_BASE_URL + 'ParseAbi', {
       method: 'POST',
       headers: {
         'api-key': 'im an api key',
