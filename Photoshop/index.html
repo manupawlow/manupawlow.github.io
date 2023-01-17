@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Photoshop</title>
+
+    <style>
+      .color-cell {
+        color: white;
+        text-align: center;
+      }
+      th {
+        width: 150px;
+      }
+      #canvas {
+        border:1px solid #d3d3d3;
+      }
+      
+      .panel {
+        background-color: aliceblue;
+      }
+
+      .panel-btn {
+        width: 100%;
+      }
+
+      .speed-control {
+        display: flex;
+  align-items: center;
+  justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="file" id="fileUrl" accept="image/*" /><br>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Panel</th>
+          <th>Canvas</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+            <td class="panel">
+                <!-- <input type="button" class="panel-btn" value="Black" onclick="applyEffect(black)"/> -->
+                <input type="button" class="panel-btn" value="Invert" onclick="applyEffect(invert)"/>
+                <input type="button" class="panel-btn" value="Pixel" onclick="applyEffect(pixel, 'Radious')"/>
+                <input type="button" class="panel-btn" value="Blur" onclick="applyEffect(blurEffect)"/>
+                <input type="button" class="panel-btn" value="Color Factor" onclick="applyEffect(colorFactorEffect, 'Factor')"/>
+                <input type="button" class="panel-btn" value="Color Switch" onclick="applyEffect(colorSwitchEffect)"/>
+                <input type="button" class="panel-btn" value="Sin" onclick="applyEffect(sinEffect)"/>
+                <input type="button" class="panel-btn" value="Module" onclick="applyEffect(moduleEffect)"/>
+                <input type="button" class="panel-btn" value="Distance" onclick="applyEffect(distance)"/>
+                <input type="button" class="panel-btn" value="Grid" onclick="applyEffect(grid, 'Grid space', 'Grid size')"/>
+                <input type="button" class="panel-btn" value="Convolution" onclick="applyEffect(convolution, 'convolution')"/>
+                <input type="button" class="panel-btn" value="ASCII" onclick="applyEffect(ascii, 'characters', 'fontSize')"/>
+            </td>
+            <td>
+                <canvas id="canvas" width="750" height="550"></canvas>
+            </td>
+            <td style="vertical-align: initial">
+                <input type="button" class="panel-btn" value="Reset" onclick="reset()"/>
+                <input type="button" class="panel-btn" value="Stop" id="pause-btn" onclick="pause()"/>
+                <div class="speed-control">
+                    <input type="button" class="panel-btn" value="&lt;&lt;" onclick="speedDown()"/>
+                    <input type="button" class="panel-btn" value="&gt;&gt;" onclick="speedUp()"/>
+                </div>
+            </td>
+        </tr>
+      </tbody>
+    </table>
+    <script src="index.js"></script>
+    <script src="effects.js"></script>
+  </body>
+</html>

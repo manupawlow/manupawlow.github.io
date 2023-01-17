@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Photoshop</title>
+
+    <style>
+      .color-cell {
+        color: white;
+        text-align: center;
+      }
+      th {
+        width: 150px;
+      }
+      #canvas {
+        border:1px solid #d3d3d3;
+      }
+      
+      .panel {
+        background-color: aliceblue;
+      }
+
+      .panel-btn {
+        width: 100%;
+      }
+
+      .speed-control {
+        display: flex;
+  align-items: center;
+  justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="file" id="mediaInput" /><br>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Panel</th>
+          <th>Canvas</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+            <td class="panel">
+                <input type="button" class="panel-btn" value="Invert" onclick="applyEffect(invert)"/>
+            </td>
+            <td>
+                <canvas id="canvas" width="750" height="550"></canvas>
+            </td>
+            <td class="panel">
+                <button onclick="play()" id="play-btn">Play</button>
+                <button onclick="pause()"id="pause-btn" disabled>Pause</button>
+            </td>
+        </tr>
+      </tbody>
+      <video id="video" style="display: none;"></video>
+    </table>
+    <script src="index2.js"></script>
+  </body>
+</html>
