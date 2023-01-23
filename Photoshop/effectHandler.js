@@ -9,12 +9,15 @@ const EFFECTS = [
     sin,
     convolution,
     colorFilter,
+    blur,
+    ascii2,
 ];
 
 EFFECTS.forEach(effect => {
     let input = document.createElement('input');
     input.type = 'button';
     input.value = effect.displayName;
+    input.classList.add('effect-btn');
     input.addEventListener('click', () => {
         addEffect(effect);
     });

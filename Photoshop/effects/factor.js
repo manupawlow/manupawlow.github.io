@@ -5,6 +5,7 @@ function apply(imageData, elapsedTime, params) {
     const writeData = writeImageData.data;
 
     const factor = params.factor;
+    console.log(factor);
 
     for (let y = 0; y < imageData.height; y++) {
         for (let x = 0; x < imageData.width; x++) {
@@ -24,6 +25,6 @@ const factor = {
     displayName: 'Color factor', 
     apply, 
     args: [
-        { name: 'factor', default: 3, min: 1, max: 20, type: 'range' }
+        { name: 'factor', default: 3, min: 2, max: 20, type: 'range' }
     ], 
 };

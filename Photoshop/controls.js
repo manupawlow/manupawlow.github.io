@@ -73,6 +73,19 @@ const downloadVideo = () => {
     })
 }
 
+const detectColor = (event) => {
+    const bounding = canvas.getBoundingClientRect();
+    const x = event.clientX - bounding.left;
+    const y = event.clientY - bounding.top;
+    const pixel = ctx.getImageData(x, y, 1, 1);
+    const data = pixel.data;
+    const gray = (data[0] + data[1] + data[2]) / 3;
+    const color = gray > 128 ? 0 : 255;
+    detectColorBtn.style.background = `rgba(${data[0]}, ${data[1]}, ${data[2]}, ${128})`;
+    detectColorBtn.style.color = `rgba(${color}, ${color}, ${color}, ${data[3]})`;;
+    detectColorBtn.textContent = `rgba(${255 - data[0]}, ${255 - data[1]}, ${255 - data[2]}, ${data[3]})`
+}
+
 playBtn.addEventListener('click', play);
 pauseBtn.addEventListener('click', pause);
 resetBtn.addEventListener('click', reset);
@@ -83,3 +96,5 @@ stopRecordBtn.addEventListener('click', stopRecording);
 
 fullScreenBtn.addEventListener('click', fullScreen);
 downloadVideoBtn.addEventListener('click', downloadVideo);
+
+detectColorBtn.addEventListener('click', () => canvas.addEventListener("mousemove", detectColor))

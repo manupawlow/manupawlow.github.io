@@ -5,19 +5,27 @@
     <title>Photoshop</title>
 
     <style>
+
+      /* body {
+        background-color: black;
+      }
+
       .canvas-container {
-        width: 750px; 
-        height: 550px;
+        min-width: 550px;
       }
       
       #canvas {
         border:1px solid #d3d3d3;
       }
 
-      /* .speed-control {
+      #effectsBtn {
         display: flex;
         align-items: center;
         justify-content: center;
+      }
+      
+      .effect-btn {
+        width: 100%;
       } */
 
     </style>
@@ -41,15 +49,15 @@
           <button id="startRecordBtn">Start record</button>
           <button id="stopRecordBtn" disabled>Stop record</button>
           <button id="downloadVideoBtn" disabled>Download video</button>
+          <button id="detectColorBtn">Detect color</button>
         <tr>
             <td class="panel">
               <div id="effectsBtn"></div>
             </td>
             <td class="canvas-container">
-                <canvas id="canvas" width="750" height="550"></canvas>
+                <canvas id="canvas"></canvas>
                 <div id="downloadProgress" style="width: 100%;">
                   <div id="loadingBar" style="width: 0%; height: 30px; background-color: green;"></div>
-
                 </div>
             </td>
             <td class="panel">
@@ -72,6 +80,9 @@
     <script src="effects/sin.js"></script>
     <script src="effects/edges.js"></script>
     <script src="effects/colorFilter.js"></script>
+    <script src="effects/blur.js"></script>
+    <script src="effects/ascii2.js"></script>
+    <script src="effects/char.js"></script>
 
     <script src="render.js"></script>
     <script src="effectHandler.js"></script>
