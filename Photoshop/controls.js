@@ -60,10 +60,9 @@ const downloadVideo = () => {
     }, loadInterval);
 
     state.processing = true;
-    canvas.hidden = true;
+    // canvas.hidden = true;
 
     recorder.downloadVideo(() => {
-        console.log('Im a callback');
         clearInterval(intervalId);
         loadingBar.hidden = true;
         canvas.hidden = false;

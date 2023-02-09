@@ -10,6 +10,7 @@ const getResizedProportions = (w, h, maxW, maxH) => {
 const renderOriginalMedia = () => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     const { x,y,w,h } = getResizedProportions(mediaMetadata.originalWidth, mediaMetadata.originalHeight, canvas.width, canvas.height);
+    // ctx.drawImage(media, 0, 0, mediaMetadata.originalWidth, mediaMetadata.originalHeight, 0, 0, mediaMetadata.originalWidth * ratio, mediaMetadata.originalHeight * ratio);
     ctx.drawImage(media, 0, 0, mediaMetadata.originalWidth, mediaMetadata.originalHeight, x, y, w, h);
   
     mediaMetadata.x = x;
@@ -21,8 +22,8 @@ const renderOriginalMedia = () => {
 }
 
 const renderMedia = (effects, elapsedTime) => {
+    // ctx.drawImage(media, 0, 0); return;
     let imageData = renderOriginalMedia();
-    // let imageData = ctx.getImageData(mediaMetadata.x, mediaMetadata.y, mediaMetadata.width, mediaMetadata.height);
     for (const effect of effects) {
         imageData = effect.apply(imageData, elapsedTime, effect.args);
     }
