@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sort Algorithms</title>
+
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+
+        #canvas {
+            margin: 20px;
+            padding: 5px;
+            border:1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="panel">
+        <!-- User inputs -->
+        <label for="algorithmSelect">Sort Algorithm</label>
+        <select id="algorithmSelect">
+            <option value="bubbleSort">Bubble Sort</option>
+            <option value="selectionSort">Selection Sort</option>
+            <option value="insertionSort">Insertion Sort</option>
+            <option value="mergeSort">Merge Sort</option>
+            <option value="heapSort">Heap Sort</option>
+            <option value="quickSort">Quick Sort</option>
+            <option value="countingSort">Counting Sort</option>
+            <option value="bogoSort">Bogo Sort</option>
+        </select>
+        
+        <label for="shapeSelect">Select shape</label>
+        <select id="shapeSelect">
+            <option value="columns">Columns</option>
+            <option value="centerColumns">Center columns</option>
+            <option value="colors">Colors</option>
+        </select>
+        
+        <label for="cpsRange">Sort speed</label>
+        <input id="cpsRange" type="range" min="1" max="12">
+        
+        <label for="elementsRange">Number of elements</label>
+        <input id="elementsRange" type="range" step="1" min="2" max="12">
+
+        <button id="sortBtn">Sort!</button>
+        <button id="pauseBtn" hidden>Stop</button>
+        <button id="continueBtn" hidden>Continue</button>
+    </div>
+    <canvas id="canvas"></canvas>
+
+    <!-- scripts -->
+    <script src="./algorithms.js"></script>
+    <script src="./index.js"></script>
+</body>
+</html>
